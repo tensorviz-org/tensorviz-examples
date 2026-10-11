@@ -1,0 +1,29 @@
+name: Usage question or example idea
+description: Ask about a workflow or suggest a small reproducible example.
+title: "[Question] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is public. Describe the goal without private model code, checkpoints,
+        credentials, personal paths or analytics installation IDs.
+  - type: textarea
+    id: goal
+    attributes:
+      label: What are you trying to understand or do?
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?
+      description: Link public examples or docs and include your tensorViz version if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What would make the result useful?
+      description: For an example idea, explain the model question and how someone could check the answer.
+    validations:
+      required: true

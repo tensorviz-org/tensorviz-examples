@@ -1,0 +1,52 @@
+name: Bug report
+description: Report a reproducible problem using tensorViz or these examples.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a public issue. Do not share private code, raw logs, credentials,
+        connection URLs, checkpoints, personal paths or analytics identities.
+        Use a small example you have permission to publish.
+  - type: input
+    id: versions
+    attributes:
+      label: tensorViz and VS Code versions
+      placeholder: "tensorViz 0.1.11; VS Code 1.106"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, architecture, model Python/PyTorch versions, and local or Remote SSH.
+      placeholder: "macOS arm64; Python 3.12; PyTorch 2.7.1; local"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include a minimal public example or name the example from this repository.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Include only a reviewed, redacted error excerpt or screenshot if useful.
+    validations:
+      required: true
+  - type: checkboxes
+    id: public-content
+    attributes:
+      label: Public content check
+      options:
+        - label: I reviewed this report and any attachments for private information and have permission to share them.
+          required: true
