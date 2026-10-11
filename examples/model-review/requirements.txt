@@ -1,0 +1,3 @@
+# Exact version used for the documented Python 3.12 CPU example check.
+# Existing projects can keep a compatible PyTorch version; do not downgrade them.
+torch==2.7.1

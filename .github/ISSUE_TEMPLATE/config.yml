@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: tensorViz setup and troubleshooting
+    url: https://tensorviz.dev/install.html#support
+    about: Check the public installation, setup and troubleshooting guide.
+  - name: Private privacy or security question
+    url: mailto:tensorviz.app@gmail.com
+    about: Explain the issue first; do not send passwords, tokens or private model files.

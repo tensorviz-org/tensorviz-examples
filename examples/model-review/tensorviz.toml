@@ -1,0 +1,21 @@
+version = 1
+
+[profiles.before]
+kind = "model"
+model = "before:ReviewNet"
+mode = "eval"
+device = "cpu"
+grad_enabled = false
+seed = 0
+init = { args = [], kwargs = {} }
+inputs = { args = [{ kind = "tensor", shape = [1, 4], dtype = "float32", requires_grad = false, generator = { kind = "normal", mean = 0.0, std = 1.0, seed = 0 } }], kwargs = {} }
+
+[profiles.after]
+kind = "model"
+model = "after:ReviewNet"
+mode = "eval"
+device = "cpu"
+grad_enabled = false
+seed = 0
+init = { args = [], kwargs = {} }
+inputs = { args = [{ kind = "tensor", shape = [1, 4], dtype = "float32", requires_grad = false, generator = { kind = "normal", mean = 0.0, std = 1.0, seed = 0 } }], kwargs = {} }
