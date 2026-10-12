@@ -9,6 +9,7 @@ forward pass, and jump to the Python source. Use the graph alongside your code
 review to understand architecture changes.
 
 [Install from the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=tensorviz.tensorviz-vscode)
+· [Open VSX listing](https://open-vsx.org/extension/tensorviz/tensorviz-vscode)
 · [Try recorded models in your browser](https://tensorviz.dev/explore/)
 · [Setup guide](https://tensorviz.dev/install.html#first-graph)
 
@@ -83,8 +84,10 @@ example's exact local CPU test environment is recorded in
 setup, use the [compatibility guide](https://tensorviz.dev/install.html#compatibility)
 and [Remote SSH guide](https://tensorviz.dev/install.html#remote).
 
-VS Code is the documented installation route. This repository does not establish
-Cursor or Windsurf compatibility or availability in their extension registries.
+VS Code is the documented editor workflow. The extension is also available from
+[Open VSX](https://open-vsx.org/extension/tensorviz/tensorviz-vscode); publisher
+verification was still pending at the October 11, 2026 check. Registry availability
+does not establish native Cursor or Windsurf capture compatibility.
 
 ## Questions, bugs and contributions
 

@@ -171,7 +171,9 @@ pretrained checkpoint. Choose it only when that modeling tradeoff fits the task.
 
 ## Optional: inspect the corrected model in tensorViz
 
-In desktop VS Code, install [tensorViz](https://marketplace.visualstudio.com/items?itemName=tensorviz.tensorviz-vscode),
+In desktop VS Code, install tensorViz from the
+[VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=tensorviz.tensorviz-vscode)
+or [Open VSX](https://open-vsx.org/extension/tensorviz/tensorviz-vscode),
 open `fixed.py`, and choose **Open as Graph** above `FixedClassifier`. Select
 the Python environment used for the check. For a captured run, use a CPU
 float32 input of shape `[2, 3, 16, 16]` in evaluation mode. First use may require
