@@ -63,3 +63,44 @@ packages, saved profiles, telemetry settings or user Python environments were
 changed. No browser, native application or installed-extension UI was opened.
 Rendered graph appearance, editor interaction and opening through VS Code remain
 unverified by this headless check.
+
+## Shape-mismatch exercise
+
+The original [`shape-mismatch` exercise](../examples/shape-mismatch/README.md)
+was checked on October 11, 2026, using an existing Python **3.12.14** / PyTorch
+**2.7.1** environment on macOS Apple Silicon. All tensors and models ran on CPU;
+no packages, model weights or datasets were downloaded. Run it with:
+
+```bash
+cd examples/shape-mismatch
+python verify.py
+```
+
+The check passed and establishes the following for the included example:
+
+- A `[batch, 3, 16, 16]` input becomes `[batch, 8, 8, 8]`, then
+  `[batch, 512]`. The deliberately wrong `Linear(128, 5)` head rejects batch
+  sizes 1, 2 and 5 with the documented matrix dimensions.
+- The corrected `Linear(512, 5)` head produces finite `[batch, 5]` output for
+  those batches. Batched and per-image inference agree within the stated
+  numerical tolerance.
+- Inputs `[2, 3, 16, 20]` and `[2, 3, 20, 16]` produce 640 flattened features;
+  the fixed-resolution head rejects them as expected.
+- The separate global-average-pooling architecture passes the tested square
+  and non-square inputs with eight features per image. This is a distinct
+  architecture, not a numerical-equivalence or checkpoint-compatibility claim.
+- Reshaping `[2, 512]` into `[8, 128]` lets the original head execute but creates
+  eight outputs for two images. The check rejects that result as a valid batch
+  contract, even though the matrix multiplication itself succeeds.
+
+Two separate in-memory mutations made the check fail as intended: restoring the
+wrong 128-wide head in the fixed model, and replacing adaptive pooling with an
+identity operation in the pooled model. Neither mutation was saved. The existing
+`model-review` CPU check also passed unchanged. New Python files parsed and local
+Markdown link targets existed.
+
+The example has no trained weights. These checks do not establish prediction
+quality, behavior for all image sizes, or numerical equivalence between the
+fixed and pooled architectures. No tensorViz backend capture or installed UI
+check was performed for this exercise; the earlier saved-profile capture above
+applies only to `model-review`.
