@@ -1,0 +1,3 @@
+# Exact stack used with Python 3.12 for the documented CPU check.
+# Existing projects can keep compatible PyTorch; do not downgrade Torch/CUDA.
+torch==2.7.1

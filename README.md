@@ -22,6 +22,14 @@ The extension is free to install; its source repository is private.
 
 ## Try an example
 
+| Exercise | What you will check |
+| --- | --- |
+| [Same interface, different computation](examples/model-review/README.md) | Review a ReLU-to-GELU edit and test what unchanged shapes do not guarantee. |
+| [Fix a flatten-to-Linear shape mismatch](examples/shape-mismatch/README.md) | Reproduce `mat1 and mat2 shapes cannot be multiplied`, calculate the feature count, and preserve batch semantics. |
+
+Both exercises run on CPU without installing tensorViz. To explore the first
+one in the extension:
+
 1. **Install tensorViz** in desktop VS Code **1.106 or newer**.
 2. **Get this repository** using GitHub's **Code → Download ZIP**, or clone it.
    Open `examples/model-review` as your VS Code folder. Follow its
