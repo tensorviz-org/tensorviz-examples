@@ -104,3 +104,17 @@ quality, behavior for all image sizes, or numerical equivalence between the
 fixed and pooled architectures. No tensorViz backend capture or installed UI
 check was performed for this exercise; the earlier saved-profile capture above
 applies only to `model-review`.
+
+## Open VSX installation links — October 11, 2026
+
+The root README and both example setup sections now include the public
+[Open VSX listing](https://open-vsx.org/extension/tensorviz/tensorviz-vscode)
+alongside the existing Marketplace route. The coordinating agent verified that
+version **0.1.12** exposes a Download link; the publisher was still labelled
+**Unverified**. Availability and publisher verification are separate states.
+
+This Markdown-only update changes no example, saved profile or package. Local
+Markdown targets and the public registry links were checked. It adds no native
+editor validation; the earlier example and capture checks retain their recorded
+versions and limits. Open VSX availability does not establish native Cursor or
+Windsurf capture compatibility.

@@ -45,7 +45,8 @@ All CPU checks passed. Shapes are a contract; they are not proof of equivalence.
 ## Explore the original model
 
 1. Open **this `model-review` folder** in desktop VS Code 1.106+ and install
-   [tensorViz](https://marketplace.visualstudio.com/items?itemName=tensorviz.tensorviz-vscode).
+   tensorViz from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=tensorviz.tensorviz-vscode)
+   or [Open VSX](https://open-vsx.org/extension/tensorviz/tensorviz-vscode).
 2. Open `before.py` and choose **Open as Graph** above `ReviewNet`.
 3. Choose the same Python environment that ran `verify.py`. The saved
    `tensorviz.toml` provides the `before` profile: CPU, evaluation mode, and a
