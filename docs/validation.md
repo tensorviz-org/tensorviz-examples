@@ -118,3 +118,31 @@ Markdown targets and the public registry links were checked. It adds no native
 editor validation; the earlier example and capture checks retain their recorded
 versions and limits. Open VSX availability does not establish native Cursor or
 Windsurf capture compatibility.
+
+## 0.1.43 CPU and saved-profile retest
+
+Both standalone example checks passed on Debian 13 x86_64 with Python 3.12.14
+and PyTorch 2.7.1+cpu in a new isolated environment. This used the unchanged
+examples at commit `70b93c07a6f49c9699d0268ffbe26cfbb361c349`.
+
+The `model-review` before/after saved profiles also passed the host snapshot,
+saved-profile resolution, resolved execution plan, isolated capture worker and
+semantic graph projection using the backend bundled in the published Open VSX
+**0.1.43** VSIX. Its SHA-256 was
+`521d0c753e921d29ce820cd4ef3fd0fa5fcb3b58295f297826c0b0c90b3c1139`.
+The input/output shapes remained `[1, 4]` / `[1, 2]`; projections contained
+13 nodes / 8 edges before and 17 nodes / 11 edges after. Both captures completed
+with no coverage omissions or capture diagnostics. The original retained ReLU;
+the edit retained GELU and LayerNorm.
+
+This is a backend compatibility check with the example's pinned model environment,
+not validation of the managed service installer or a fresh installed VS Code UI.
+No signed-in desktop, graph rendering, source-navigation clicks, Cursor or
+Windsurf UI was tested. The shape-mismatch exercise was tested as a standalone
+CPU script, not captured through the extension.
+
+The Open VSX API for `tensorviz/tensorviz-vscode/0.1.43` reports `verified: true`.
+This supersedes the October publisher-status observation, not the limits on
+native editor compatibility. The main extension source remains private; the
+README's source-visibility wording is intentionally unchanged. The old demo is
+still explicitly labelled as recorded in 0.1.10, rather than presented as new footage.
