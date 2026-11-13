@@ -72,7 +72,7 @@ expected results and the checks behind those boundaries.
 
 ## Compatibility
 
-These instructions target **tensorViz 0.1.11**. Model capture supports Python
+These instructions target **tensorViz 0.1.43**. Model capture supports Python
 **3.10–3.14** with compatible PyTorch and model dependencies. The separate
 tensorViz service requires Python **3.11+**. Expression-level source edits require
 Python **3.11+**. Your Python 3.10 model environment can remain separate.
@@ -86,7 +86,7 @@ and [Remote SSH guide](https://tensorviz.dev/install.html#remote).
 
 VS Code is the documented editor workflow. The extension is also available from
 [Open VSX](https://open-vsx.org/extension/tensorviz/tensorviz-vscode); publisher
-verification was still pending at the October 11, 2026 check. Registry availability
+verification is confirmed by the registry API for 0.1.43. Registry availability
 does not establish native Cursor or Windsurf capture compatibility.
 
 ## Questions, bugs and contributions
