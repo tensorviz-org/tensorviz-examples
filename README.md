@@ -2,11 +2,21 @@
 
 # tensorViz examples and support
 
-**Understand the PyTorch model you are changing, inside VS Code.**
+**tensorViz is a PyTorch model visualizer: open any `nn.Module` as an interactive
+graph straight from your Python source, with measured tensor shapes. No
+`torch.export` or ONNX conversion needed.**
 
 Open an `nn.Module` as a graph, expand nested modules, follow shapes from a captured
 forward pass, and jump to the Python source. Use the graph alongside your code
-review to understand architecture changes.
+review to understand architecture changes. The extension installs in VS Code, Cursor and
+VSCodium, and as a preview plugin for Claude Code, Codex and Cursor.
+
+```sh
+code --install-extension tensorviz.tensorviz-vscode
+```
+
+Then click **Open as Graph** above your model class
+([quickstart](https://docs.tensorviz.dev/quickstart.html)).
 
 [Install from the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=tensorviz.tensorviz-vscode)
 · [Open VSX listing](https://open-vsx.org/extension/tensorviz/tensorviz-vscode)
@@ -88,6 +98,28 @@ VS Code is the documented editor workflow. The extension is also available from
 [Open VSX](https://open-vsx.org/extension/tensorviz/tensorviz-vscode); publisher
 verification is confirmed by the registry API for 0.1.43. Registry availability
 does not establish native Cursor or Windsurf capture compatibility.
+
+## Common questions
+
+**How do I visualize a PyTorch model with tensorViz?** Install the editor
+extension (or the [coding-agent plugin](https://github.com/tensorviz-org/tensorviz-plugins)),
+open your project and click **Open as Graph** above the `nn.Module` class.
+**Inspect source only** previews the graph without running the model. See the
+[quickstart](https://docs.tensorviz.dev/quickstart.html).
+
+**Do I need `torch.export`, TorchScript or ONNX?** No. Open as Graph runs one
+ordinary eager forward call in the Python environment you choose and records
+shapes with module hooks. Nothing is exported or converted first.
+
+**How is it different from Netron, torchview or torchinfo?** Netron opens saved
+model files such as ONNX or TorchScript and is a great choice for exported
+models. torchview and torchviz draw a static Graphviz diagram, and torchinfo prints
+a text summary. tensorViz is an interactive canvas in your editor or coding agent:
+expand modules, jump from a layer to its Python, and compare two revisions of a
+model layer by layer.
+
+**Is it free?** The extension is free to install, and the core graph tools need no
+AI subscription or provider key.
 
 ## Questions, bugs and contributions
 
